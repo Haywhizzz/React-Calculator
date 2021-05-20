@@ -4,7 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Live Demo
 
-[React Calculator](https://festive-gates-cfc45c.netlify.app/)
+[React Calculator]()
 
 ## Available Scripts
 
