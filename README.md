@@ -4,7 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Live Demo
 
-[React Calculator]()
+[React Calculator](https://awesome-wright-6271bc.netlify.app/)
 
 ## Available Scripts
 
