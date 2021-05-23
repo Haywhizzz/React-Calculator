@@ -12,9 +12,9 @@ const ButtonPanel = () => {
   return (
     <>
       {
-        Object.keys(groups).map(groupName => (
+        Object.keys(groups).map((groupName) => (
           <div key={groupName}>
-            {groups[groupName].map(value => <Button key={value} name={value} />)}
+            {groups[groupName].map((value) => <Button key={value} name={value} />)}
           </div>
         ))
       }
