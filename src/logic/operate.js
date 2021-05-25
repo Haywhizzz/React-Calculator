@@ -2,16 +2,16 @@ import Big from 'big.js';
 
 const operate = (numberOne, numberTwo, operation) => {
   if (operation === '+') {
-    return Big(numberOne) * 1 + Big(numberTwo) * 1;
+    return Big(numberOne).plus(Big(numberTwo));
   }
   if (operation === '-') {
-    return Big(numberOne) - Big(numberTwo);
+    return Big(numberOne).minus(Big(numberTwo));
   }
   if (operation === 'x') {
-    return Big(numberOne) * Big(numberTwo);
+    return Big(numberOne).times(Big(numberTwo));
   }
   if (operation === '÷') {
-    return Big(numberOne) / Big(numberTwo);
+    return Big(numberOne).div(Big(numberTwo));
   }
   if (operation === '%') {
     return Big(numberOne) * 0.01;
