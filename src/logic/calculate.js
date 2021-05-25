@@ -1,22 +1,14 @@
-import Big from 'big.js';
+import operate from './operate';
 
-const operate = (numberOne, numberTwo, operation) => {
-  if (operation === '+') {
-    return Big(numberOne) * 1 + Big(numberTwo) * 1;
+const calculate = (data, buttonName) => {
+  const copyData = { ...data };
+  if (buttonName === '+/-') {
+    copyData.total *= -1;
+    copyData.next *= -1;
+  } else if (buttonName === '+' || buttonName === '-' || buttonName === 'x' || buttonName === '÷' || buttonName === '%') {
+    copyData.total = operate(copyData.total, copyData.next, buttonName);
   }
-  if (operation === '-') {
-    return Big(numberOne) - Big(numberTwo);
-  }
-  if (operation === 'x') {
-    return Big(numberOne) * Big(numberTwo);
-  }
-  if (operation === '÷') {
-    return Big(numberOne) / Big(numberTwo);
-  }
-  if (operation === '%') {
-    return Big(numberOne) * 0.01;
-  }
-  return '0';
+  return copyData;
 };
 
-export default operate;
+export default calculate;
