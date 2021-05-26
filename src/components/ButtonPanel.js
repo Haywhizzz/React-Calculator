@@ -1,25 +1,71 @@
+import React from 'react';
+import PropTypes from 'prop-types';
 import Button from './Button';
 
-const ButtonPanel = () => {
-  const groups = {
-    group1: ['AC', '+/-', '%', '÷'],
-    group2: ['7', '8', '9', 'x'],
-    group3: ['4', '5', '6', '-'],
-    group4: ['1', '2', '3', '+'],
-    group5: ['0', '.', '='],
-  };
+const ButtonPanel = (props) => {
+  const firstGroup = ['AC', '+/-', '%', '÷'];
+  const secondGroup = ['7', '8', '9', 'x'];
+  const thirdGroup = ['4', '5', '6', '-'];
+  const fourthGroup = ['1', '2', '3', '+'];
+  const fifthGroup = ['0', '.', '='];
 
   return (
     <>
-      {
-        Object.keys(groups).map((groupName) => (
-          <div key={groupName}>
-            {groups[groupName].map((value) => <Button key={value} name={value} />)}
-          </div>
-        ))
-      }
+      <div className="group1">
+        {firstGroup.map((element) => (
+          <Button
+            name={element}
+            key={firstGroup.indexOf(element)}
+            handleClick={(element) => props.clickHandler(element)}
+          />
+        ))}
+      </div>
+      <div className="group1">
+        {secondGroup.map((element) => (
+          <Button
+            name={element}
+            key={secondGroup.indexOf(element)}
+            handleClick={(element) => props.clickHandler(element)}
+          />
+        ))}
+      </div>
+      <div className="group1">
+        {thirdGroup.map((element) => (
+          <Button
+            name={element}
+            key={thirdGroup.indexOf(element)}
+            handleClick={(element) => props.clickHandler(element)}
+          />
+        ))}
+      </div>
+      <div className="group1">
+        {fourthGroup.map((element) => (
+          <Button
+            name={element}
+            key={fourthGroup.indexOf(element)}
+            handleClick={(element) => props.clickHandler(element)}
+          />
+        ))}
+      </div>
+      <div className="group1">
+        {fifthGroup.map((element) => (
+          <Button
+            name={element}
+            key={fifthGroup.indexOf(element)}
+            handleClick={(element) => props.clickHandler(element)}
+          />
+        ))}
+      </div>
     </>
   );
+};
+
+ButtonPanel.propTypes = {
+  clickHandler: PropTypes.func,
+};
+
+ButtonPanel.defaultProps = {
+  clickHandler: null,
 };
 
 export default ButtonPanel;
