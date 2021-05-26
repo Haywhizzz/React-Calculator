@@ -15,11 +15,11 @@ const ButtonPanel = (props) => {
       {
         Object.keys(groups).map((groupName) => (
           <div key={groupName}>
-            {groups[groupName].map(value => (
-            <Button key={value} name={value} clickHandler={props.clickHandler} />
+            {groups[groupName].map((value) => (
+              <Button key={value} name={value} clickHandler={props.clickHandler} />
             ))}
           </div>
-        )) 
+        ))
       }
     </>
   );
