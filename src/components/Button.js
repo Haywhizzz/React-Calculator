@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 
-
-const Button = props => {
+const Button = (props) => {
   const { name, color, wide } = props;
   const { clickHandler } = props;
   const buttonwidth = wide ? '50%' : '25%';

@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import Button from './Button';
 
-const ButtonPanel = props => {
+const ButtonPanel = (props) => {
   const groups = {
     group1: ['AC', '+/-', '%', '÷'],
     group2: ['7', '8', '9', 'x'],
@@ -13,7 +13,7 @@ const ButtonPanel = props => {
   return (
     <div>
       {
-        Object.keys(groups).map(groupName => (
+        Object.keys(groups).map((groupName) => (
           <div key={groupName}>
             {groups[groupName].map((value, index) => (value ? (
               <Button

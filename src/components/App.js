@@ -12,9 +12,9 @@ const App = () => {
     },
   );
 
-  const handleClick = buttonName => {
+  const handleClick = (buttonName) => {
     setState(
-      state => calculate(state, buttonName),
+      (state) => calculate(state, buttonName),
     );
   };
 
