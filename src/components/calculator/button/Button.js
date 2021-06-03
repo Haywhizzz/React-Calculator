@@ -24,9 +24,9 @@ Button.propTypes = {
 
 Button.defaultProps = {
   name: 'button',
-  className: 'button',
-  color: '',
-  clickHandler: PropTypes.func,
+  color: 'button',
+  wide: 'button',
+  clickHandler: PropTypes.func.isRequired,
 };
 
 export default Button;
