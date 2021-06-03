@@ -3,6 +3,7 @@ import calculate from '../calculate';
 describe('Test cases for calculate.js Module', () => {
   test('test for the `AC` button', () => {
     const result = calculate({ total: '5', next: '', operation: '' }, 'AC');
+     // eslint-disable-next-line no-unused-expressions
     expect(result).toBeUndefined;
   });
 
