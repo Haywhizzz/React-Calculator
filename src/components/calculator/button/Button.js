@@ -16,10 +16,16 @@ const Button = (props) => {
 };
 
 Button.propTypes = {
-  name: PropTypes.string.isRequired,
-  color: PropTypes.string.isRequired,
-  wide: PropTypes.bool.isRequired,
+  name: PropTypes.string,
+  color: PropTypes.bool,
+  wide: PropTypes.bool,
   clickHandler: PropTypes.func.isRequired,
+};
+
+Button.defaultProps = {
+  name: 'button',
+  color: 'button',
+  wide: 'button',
 };
 
 export default Button;
