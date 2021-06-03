@@ -1,26 +1,50 @@
 import calculate from '../calculate';
 
-test('number buttons when total and next are not empty', () => {
-  const data = calculate({ total: '2', next: '4', operation: '+' }, '5');
-  expect(data).toEqual({ total: '2', next: '45', operation: '+' });
-});
+describe('Test cases for calculate.js Module', () => {
+  test('test for the `AC` button', () => {
+    const result = calculate({ total: '5', next: '', operation: '' }, 'AC');
+    expect(result).toBeUndefined;
+  });
 
-test('number buttons when total and next are empty', () => {
-  const data = calculate({ total: null, next: null, operation: '+' }, '5');
-  expect(data).not.toEqual({ total: '9', next: null, operation: '+' });
-});
+  test('Add two numbers after pressing the equal sign', () => {
+    const result = calculate({ total: '2', next: '2', operation: '+' }, '=');
+    const { total } = result;
+    expect(total).toEqual('4');
+  });
 
-test('AC button', () => {
-  const data = calculate({ total: '2', next: '4', operation: '+' }, 'AC');
-  expect(data).toEqual({ total: null, next: null, operation: null });
-});
+  test('Subtract number2 from number 1 after pressing the equal sign', () => {
+    const result = calculate({ total: '4', next: '2', operation: '-' }, '=');
+    const { total } = result;
+    expect(total).toEqual('2');
+  });
 
-test('% button', () => {
-  const data = calculate({ total: '2', next: '4', operation: '+' }, '%');
-  expect(data).toEqual({ total: '2', next: '0.04', operation: '+' });
-});
+  test('Divide two numbers after pressing the equal sign', () => {
+    const result = calculate({ total: '4', next: '2', operation: '÷' }, '=');
+    const { total } = result;
+    expect(total).toEqual('2');
+  });
 
-test('operation after operation', () => {
-  const data = calculate({ total: '2', next: '4', operation: '+' }, '-');
-  expect(data.total).toBe('2');
+  test('Multiplies numbers after pressing the equal sign', () => {
+    const result = calculate({ total: '4', next: '2', operation: 'x' }, '=');
+    const { total } = result;
+    expect(total).toEqual('8');
+  });
+
+  test('test for the `+/-` button', () => {
+    const result = calculate({ total: '5', next: '2', operation: '+/-' }, '=');
+    const { total } = result;
+    expect(total).toEqual('error');
+  });
+
+  test('test for the `%` button', () => {
+    const result = calculate({ total: '5', next: '', operation: '' }, '%');
+    const { total } = result;
+    expect(total).toEqual('0.05');
+  });
+
+  test('test for the `.` button', () => {
+    const result = calculate({ total: '5', next: '', operation: '' }, '.');
+    const { total } = result;
+    expect(total).toEqual('5');
+  });
 });
