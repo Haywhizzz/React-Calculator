@@ -14,7 +14,7 @@ A calculator app built with React.
 ### Prerequisites
 1. An internet browser
 2. npm
-3. react
+3. React
 
    
 ### Steps to follow
@@ -60,7 +60,7 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 👤 **Oyeleke Ayomide**
 
-- Github: [@Haywhizzz](https://github.com/Haywhizzz)
+- Github: [@Haywhizzz](https://github.com/Haywhizz)
 - Twitter: [@Haywhizzz](https://twitter.com/Haywhizzz)
 - Linkedin: [Haywhizzz](https://www.linkedin.com/in/oyelekeayomide)
 
